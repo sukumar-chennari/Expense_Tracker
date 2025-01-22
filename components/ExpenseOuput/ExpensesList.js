@@ -1,15 +1,20 @@
 import { FlatList, Text } from "react-native";
 import ExpenseItem from "./ExpenseItem";
 
-
-function renderExpenseItem(itemData){
-    // console.log(itemData.item.description)
-    return <ExpenseItem {...itemData.item}/>
-}
-export default function  ExpensesList({expenses}){
-    return <FlatList
-    data={expenses}
-    renderItem={renderExpenseItem}
-    keyExtractor={(item)=>item.id}/>
+function renderExpenseItem({ item }) {
+  console.log("Rendering item:", item); // Log each item for debugging
+  return <ExpenseItem {...item} />;
 }
 
+export default function ExpensesList({ expenses = [] }) {
+  console.log("ExpensesList received:", expenses); // Log the entire expenses array
+
+  return (
+    <FlatList
+      data={expenses}
+      renderItem={renderExpenseItem}
+      keyExtractor={(item) => item.id}
+      ListEmptyComponent={<Text style={{ textAlign: "center" }}>No expenses found.</Text>}
+    />
+  );
+}
