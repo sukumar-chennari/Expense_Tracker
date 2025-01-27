@@ -10,7 +10,7 @@ export default function RecentExpenses() {
     const recentExpenses = expenseCtx.expenses.filter((expense) => {
         const today = new Date();
         const date7daysAgo = getDateMinusDays(today, 7);
-        console.log("Expense Date:", expense.date, "7 Days Ago:", date7daysAgo); // Debugging
+        // console.log("Expense Date:", expense.date, "7 Days Ago:", date7daysAgo); // Debugging
         return (expense.date > date7daysAgo)&& (expense.date <= today);
     });
 

@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { GlobalStyles } from "../../constants/styles";
 
 export default function ExpensesSummary({ expenses = [], periodName }) {
-  console.log("Expenses in ExpensesSummary:", expenses);
+  // console.log("Expenses in ExpensesSummary:", expenses);
 
   const expensesSum = expenses.reduce((sum, expense) => {
     const amount = Number(expense.amount); // Ensure numeric value
