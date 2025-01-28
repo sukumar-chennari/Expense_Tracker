@@ -4,8 +4,7 @@ import Button from "./button";
 
 export default function ErrorOverlay({message,onConfirm}){
     return <View style={styles.container}> 
-        <Text style={[styles.text,styles.title]}>An error occured!</Text>
-        <Text style={styles.message}>{message}</Text>
+        <Text>{message}</Text>
         <Button onPress={onConfirm}>Okay</Button>
     </View>
 }
@@ -17,19 +16,5 @@ const styles=StyleSheet.create({
         alignItems:'center',
         padding:24,
         backgroundColor:GlobalStyles.colors.primary700
-    },
-    text:{
-        color:'white',
-        textAlign:'center',
-        marginBottom:8
-    },
-    title:{
-        fontSize:20,
-        fontWeight:'bold',
-
-    },
-    message:{
-        fontSize:14,
-        fontWeight:'bold'
     }
 })
